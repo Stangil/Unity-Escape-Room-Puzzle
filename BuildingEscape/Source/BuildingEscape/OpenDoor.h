@@ -17,10 +17,8 @@ public:
 
 	// Called when the game starts
 	virtual void BeginPlay() override;
-
 	void OpenDoor();
 	void CloseDoor();
-	// Called every frame
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
 private:
@@ -34,9 +32,9 @@ private:
 	float DoorCloseDelay = 1.f;
 
 	float LastDoorOpenTime;
-	//float Counter;
-	AActor* ActorThatOpens; //Remember pawn inherits from actor
+
 	AActor* Owner; // The owning door
 
-	
+	// Returns total mass in KG
+	float GetTotalMassOfActorsOnPlate();
 };
